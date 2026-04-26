@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ozon в Google Sheets — выгрузка заказов, продаж, остатков. Бесплатно — SellSync</title>
+  <meta name="description" content="Бесплатный Google Workspace Add-on для выгрузки данных Ozon в Google Sheets: заказы, продажи, остатки, финансы и юнит-экономика. Установка за 1 минуту.">
+  <meta name="keywords" content="ozon google sheets, выгрузка ozon в google sheets, ozon api google sheets, аналитика ozon в таблице, юнит-экономика ozon, ozon в гугл таблицу, ozon seller api sheets">
+  <link rel="canonical" href="https://sellsync.bobot.click/ozon-google-sheets/">
+
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ozon в Google Sheets — бесплатный Add-on">
+  <meta property="og:description" content="Заказы, продажи, остатки, финансы и юнит-экономика Ozon — автоматически в Google Sheets. Бесплатный Google Workspace Add-on.">
+  <meta property="og:url" content="https://sellsync.bobot.click/ozon-google-sheets/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="SellSync">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ozon в Google Sheets — бесплатный Add-on">
+  <meta name="twitter:description" content="Заказы, продажи, остатки, финансы и юнит-экономика Ozon — автоматически в Google Sheets.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap&subset=cyrillic,latin" rel="stylesheet">
+
+  <link rel="stylesheet" href="/styles.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "SellSync — Ozon в Google Sheets",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "Google Workspace Add-on для выгрузки данных Ozon в Google Sheets. Заказы, продажи, остатки, финансы, юнит-экономика, ABC-анализ, прогноз поставок.",
+    "url": "https://sellsync.bobot.click/ozon-google-sheets/",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "RUB",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner container-lg">
+      <a href="/" class="header-logo">SellSync</a>
+      <a href="https://t.me/aleksandr_later" class="header-link" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.2 5.1L2.5 12.5c-.6.2-.6 1.1 0 1.3l4.4 1.5 1.7 5.3c.2.5.8.7 1.2.4l2.5-2 4.8 3.5c.5.4 1.2.1 1.4-.5L21.9 6c.2-.7-.4-1.2-1-.9z"/><path d="M8.6 15.3l.6-4 8.8-8"/></svg>
+        Telegram
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container-sm">
+      <span class="badge">Ozon × Google Sheets</span>
+      <h1>Ozon в Google Sheets —<br>все данные в одной таблице</h1>
+      <p class="hero-subtitle">Заказы, продажи, остатки и финансы Ozon — выгружаются прямо в вашу Google-таблицу. Бесплатно, без программирования, через Google Workspace Add-on.</p>
+      <div>
+        <a href="#" class="btn btn-primary btn-lg pulse-glow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Установить бесплатно
+        </a>
+      </div>
+      <p class="hero-sub-cta">Бесплатно. Без регистрации. Установка за 1 минуту.</p>
+    </div>
+  </section>
+
+  <!-- Что выгружается -->
+  <section class="features">
+    <div class="container-md" style="margin-bottom: 32px; text-align: center;">
+      <h2 style="margin-bottom: 12px;">Какие данные Ozon выгружаются</h2>
+      <p style="color: var(--muted-foreground); font-size: 0.9375rem;">Четыре листа в вашей Google-таблице, обновляемых по кнопке.</p>
+    </div>
+    <div class="features-grid container-md">
+
+      <div class="feature">
+        <svg class="icon icon-primary" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <div>
+          <p class="feature-title">Заказы</p>
+          <p class="feature-desc">Дата, номер, артикул, название, количество, цена, сумма, статус, склад. По каждому заказу из Ozon Seller API.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <svg class="icon icon-primary" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        <div>
+          <p class="feature-title">Продажи</p>
+          <p class="feature-desc">Дата, артикул, выручка, комиссия, логистика, к выплате. Реальные продажи с разбивкой по товарам и периодам.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <svg class="icon icon-primary" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+        <div>
+          <p class="feature-title">Остатки</p>
+          <p class="feature-desc">Артикул, склад, доступно, в пути, всего. Текущие остатки по всем складам Ozon.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <svg class="icon icon-primary" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <div>
+          <p class="feature-title">Финансы</p>
+          <p class="feature-desc">Дата, тип операции, выручка, комиссия, логистика, возврат комиссии, сервисные сборы, итого. Источник — <code style="font-family: ui-monospace, Menlo, monospace; font-size: 0.85em;">/v1/finance/transaction/list</code>.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Аналитика -->
+  <section class="before-after">
+    <div class="container-md">
+      <h2>Аналитика поверх данных Ozon</h2>
+      <p style="text-align: center; color: var(--muted-foreground); margin-top: -24px; margin-bottom: 40px; font-size: 0.9375rem;">Отдельные листы с формулами, пересчитываются после каждой синхронизации. Free tier.</p>
+      <div class="before-after-grid">
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Юнит-экономика</div>
+          </div>
+          <div class="card-content">
+            <p style="font-size: 0.875rem; color: var(--muted-foreground);">Маржа, ROI и валовая прибыль по каждому SKU. SUMIF по продажам, VLOOKUP по себестоимости — всё видно в одной таблице.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">ABC-анализ</div>
+          </div>
+          <div class="card-content">
+            <p style="font-size: 0.875rem; color: var(--muted-foreground);">Категории A/B/C по доле в выручке. Видно сразу, какие товары делают прибыль, а какие тянут вниз ассортимент.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Прогноз поставок</div>
+          </div>
+          <div class="card-content">
+            <p style="font-size: 0.875rem; color: var(--muted-foreground);">Средние дневные продажи (7/14 дней), дни запаса, рекомендация к закупке. Conditional formatting подсвечивает критичные позиции.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Себестоимость</div>
+          </div>
+          <div class="card-content">
+            <p style="font-size: 0.875rem; color: var(--muted-foreground);">Лист с ручным вводом закупочных цен. Цены сохраняются при обновлении и подтягиваются в юнит-экономику автоматически.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Как начать -->
+  <section class="steps" style="background: var(--muted); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container-md">
+      <h2>Как настроить выгрузку Ozon</h2>
+      <div class="steps-grid">
+
+        <div class="step">
+          <div class="step-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </div>
+          <p class="step-label">Шаг 1</p>
+          <h3>Установите add-on</h3>
+          <p>Откройте Google Sheets → Расширения → Дополнения → SellSync. Один клик из Google Workspace Marketplace.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+          </div>
+          <p class="step-label">Шаг 2</p>
+          <h3>Вставьте Client ID и API Key</h3>
+          <p>В кабинете Ozon Seller: Настройки → Seller API → Сгенерировать ключ. Скопируйте Client ID и API Key, вставьте в sidebar SellSync.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+          </div>
+          <p class="step-label">Шаг 3</p>
+          <h3>Синхронизируйте</h3>
+          <p>Нажмите кнопку — за секунды появятся листы Ozon Заказы, Ozon Продажи, Ozon Остатки, Ozon Финансы и листы аналитики.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Сравнение -->
+  <section class="comparison">
+    <div class="container-md">
+      <h2>SellSync vs альтернативы для Ozon</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Возможность</th>
+              <th class="col-sellsync">SellSync</th>
+              <th>apimonster</th>
+              <th>Ручной экспорт CSV</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Бесплатно</td>
+              <td class="col-sellsync table-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+              <td class="table-x">Платно</td>
+              <td class="table-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            </tr>
+            <tr>
+              <td>Нативный Google Workspace Add-on</td>
+              <td class="col-sellsync table-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+              <td class="table-x"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td>
+              <td class="table-x"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td>
+            </tr>
+            <tr>
+              <td>Wildberries в той же таблице</td>
+              <td class="col-sellsync table-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+              <td class="table-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+              <td class="table-x"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td>
+            </tr>
+            <tr>
+              <td>Юнит-экономика и ABC</td>
+              <td class="col-sellsync table-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+              <td class="table-x"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td>
+              <td class="table-x"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td>
+            </tr>
+            <tr>
+              <td>Прогноз поставок</td>
+              <td class="col-sellsync table-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+              <td class="table-x"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td>
+              <td class="table-x"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td>
+            </tr>
+            <tr>
+              <td>Установка в 1 клик</td>
+              <td class="col-sellsync table-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+              <td class="table-x">Отдельный SaaS</td>
+              <td class="table-x">n/a</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta">
+    <div class="container-sm" style="max-width: 512px;">
+      <h2>Установите за 1 минуту</h2>
+      <p class="final-cta-subtitle">Бесплатный Google Workspace Add-on. Wildberries и Ozon в одной таблице.</p>
+      <a href="#" class="btn btn-primary btn-lg pulse-glow">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Установить бесплатно
+      </a>
+      <p style="margin-top: 24px; font-size: 0.875rem; color: var(--muted-foreground);">
+        Продаёте и на Wildberries? <a href="/wb-google-sheets/" style="color: var(--primary); text-decoration: underline; text-underline-offset: 2px;">Wildberries в Google Sheets →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container-lg">
+      <div class="footer-links">
+        <a href="/">Главная</a>
+        <a href="/wb-google-sheets/">WB в Sheets</a>
+        <a href="/privacy/">Конфиденциальность</a>
+        <a href="/terms/">Условия</a>
+        <a href="https://t.me/aleksandr_later" target="_blank" rel="noopener">Telegram</a>
+        <a href="mailto:alex.shakmakoff@gmail.com">alex.shakmakoff@gmail.com</a>
+      </div>
+      <p>&copy; 2026 SellSync</p>
+    </div>
+  </footer>
+
+</body>
+</html>

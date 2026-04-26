@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SellSync — WB и Ozon в Google Sheets. Бесплатный Add-on</title>
+  <meta name="description" content="Заказы, продажи, остатки, финансы и юнит-экономика с Wildberries и Ozon — автоматически в Google Sheets. Бесплатный Google Workspace Add-on.">
+  <meta name="keywords" content="wildberries google sheets, ozon google sheets, выгрузка wildberries, wb аналитика, ozon аналитика, маркетплейс google sheets, юнит-экономика wildberries, юнит-экономика ozon">
+  <link rel="canonical" href="https://sellsync.bobot.click/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="SellSync — WB и Ozon в Google Sheets">
+  <meta property="og:description" content="Заказы, продажи, остатки, финансы и юнит-экономика — автоматически в Google Sheets. Бесплатный Add-on.">
+  <meta property="og:url" content="https://sellsync.bobot.click/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="SellSync">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SellSync — WB и Ozon в Google Sheets">
+  <meta name="twitter:description" content="Заказы, продажи, остатки, финансы и юнит-экономика — автоматически в Google Sheets. Бесплатный Add-on.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap&subset=cyrillic,latin" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "SellSync",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "Google Workspace Add-on для выгрузки данных Wildberries и Ozon в Google Sheets. Заказы, продажи, остатки, финансы, юнит-экономика.",
+    "url": "https://sellsync.bobot.click",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "RUB",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner container-lg">
+      <span class="header-logo">SellSync</span>
+      <a href="https://t.me/sellsync_support" class="header-link" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.2 5.1L2.5 12.5c-.6.2-.6 1.1 0 1.3l4.4 1.5 1.7 5.3c.2.5.8.7 1.2.4l2.5-2 4.8 3.5c.5.4 1.2.1 1.4-.5L21.9 6c.2-.7-.4-1.2-1-.9z"/><path d="M8.6 15.3l.6-4 8.8-8"/></svg>
+        Telegram
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container-sm">
+      <span class="badge">Google Sheets Add-on</span>
+      <h1>WB и Ozon в одной таблице.<br>Бесплатно.</h1>
+      <p class="hero-subtitle">Заказы, продажи, остатки, финансы и юнит-экономика — автоматически в Google Sheets</p>
+      <div>
+        <a href="#" class="btn btn-primary btn-lg pulse-glow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Установить бесплатно
+        </a>
+      </div>
+      <p class="hero-sub-cta">Бесплатно. Без регистрации. Установка за 1 минуту.</p>
+    </div>
+  </section>
+
+  <!-- Before / After -->
+  <section class="before-after">
+    <div class="container-md">
+      <h2>Как обычно vs как с SellSync</h2>
+      <div class="before-after-grid">
+
+        <!-- Without -->
+        <div class="card card-destructive">
+          <div class="card-header">
+            <div class="card-title">Без SellSync</div>
+          </div>
+          <div class="card-content">
+            <div class="point">
+              <svg class="icon icon-destructive" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              <p>Ручной экспорт каждый день — копируете CSV из личного кабинета</p>
+            </div>
+            <div class="point">
+              <svg class="icon icon-destructive" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              <p>Два маркетплейса — два разных файла, разные форматы</p>
+            </div>
+            <div class="point">
+              <svg class="icon icon-destructive" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              <p>Нет маржинальности — считаете прибыль вручную в калькуляторе</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- With -->
+        <div class="card card-success">
+          <div class="card-header">
+            <div class="card-title">С SellSync</div>
+          </div>
+          <div class="card-content">
+            <div class="point">
+              <svg class="icon icon-success" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <p>Данные загружаются по кнопке — заказы, продажи, остатки, финансы</p>
+            </div>
+            <div class="point">
+              <svg class="icon icon-success" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <p>WB и Ozon в одной таблице — единый формат, единый дашборд</p>
+            </div>
+            <div class="point">
+              <svg class="icon icon-success" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <p>Юнит-экономика считается автоматически — маржа, ROI, ABC-анализ</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <div class="features-grid container-md">
+
+      <div class="feature">
+        <svg class="icon icon-primary" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        <div>
+          <p class="feature-title">WB + Ozon в одном месте</p>
+          <p class="feature-desc">Заказы, продажи, остатки и финансы с обоих маркетплейсов в одной таблице.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <svg class="icon icon-primary" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        <div>
+          <p class="feature-title">Юнит-экономика и ABC-анализ</p>
+          <p class="feature-desc">Маржинальность по каждому товару. ABC-категории обновляются при каждой синхронизации.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <svg class="icon icon-primary" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+        <div>
+          <p class="feature-title">Прогноз поставок</p>
+          <p class="feature-desc">Средние продажи, дни запаса, рекомендация к закупке — автоматически.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <svg class="icon icon-primary" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div>
+          <p class="feature-title">Безопасно</p>
+          <p class="feature-desc">Доступ только к текущей таблице. Данные остаются у вас, минимальные права.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="steps">
+    <div class="container-md">
+      <h2>Как это работает</h2>
+      <div class="steps-grid">
+
+        <div class="step">
+          <div class="step-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </div>
+          <p class="step-label">Шаг 1</p>
+          <h3>Установите add-on</h3>
+          <p>Откройте Google Sheets, нажмите Расширения и установите SellSync из Marketplace.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+          </div>
+          <p class="step-label">Шаг 2</p>
+          <h3>Вставьте API-токен</h3>
+          <p>Скопируйте токен из личного кабинета WB или Ozon и вставьте в sidebar.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+          </div>
+          <p class="step-label">Шаг 3</p>
+          <h3>Синхронизируйте</h3>
+          <p>Нажмите кнопку — данные появятся в отдельных листах за секунды.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison -->
+  <section class="comparison">
+    <div class="container-md">
+      <h2>Сравнение с аналогами</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Возможность</th>
+              <th class="col-sellsync">SellSync</th>
+              <th>WB-Sheets</th>
+              <th>excellen</th>
+              <th>apimonster</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>WB + Ozon</td>
+              <td class="col-sellsync table-check">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="table-x">Только WB</td>
+              <td class="table-check">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="table-check">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+            </tr>
+            <tr>
+              <td>Бесплатно</td>
+              <td class="col-sellsync table-check">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="table-check">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="table-x">4 990 &#8381;</td>
+              <td class="table-x">Платно</td>
+            </tr>
+            <tr>
+              <td>Нативный Add-on (GWM)</td>
+              <td class="col-sellsync table-check">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="table-check">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="table-x">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </td>
+              <td class="table-x">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </td>
+            </tr>
+            <tr>
+              <td>Юнит-экономика</td>
+              <td class="col-sellsync table-check">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="table-x">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </td>
+              <td class="table-check">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="table-x">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </td>
+            </tr>
+            <tr>
+              <td>ABC-анализ</td>
+              <td class="col-sellsync table-check">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="table-x">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </td>
+              <td class="table-x">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </td>
+              <td class="table-x">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </td>
+            </tr>
+            <tr>
+              <td>Прогноз поставок</td>
+              <td class="col-sellsync table-check">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="table-x">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </td>
+              <td class="table-x">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </td>
+              <td class="table-x">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </td>
+            </tr>
+            <tr>
+              <td>Минимальные права</td>
+              <td class="col-sellsync table-check">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </td>
+              <td class="table-x">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </td>
+              <td class="table-x">n/a</td>
+              <td class="table-x">n/a</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta">
+    <div class="container-sm" style="max-width: 512px;">
+      <h2>Попробуйте бесплатно</h2>
+      <p class="final-cta-subtitle">Установка за 1 минуту. Работает с WB и Ozon.</p>
+      <a href="#" class="btn btn-primary btn-lg pulse-glow">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Установить бесплатно
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container-lg">
+      <div class="footer-links">
+        <a href="/privacy/">Конфиденциальность</a>
+        <a href="/terms/">Условия</a>
+        <a href="https://t.me/sellsync_support" target="_blank" rel="noopener">Telegram</a>
+      </div>
+      <p>&copy; 2026 SellSync</p>
+    </div>
+  </footer>
+
+</body>
+</html>

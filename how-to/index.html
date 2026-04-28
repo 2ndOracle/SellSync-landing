@@ -146,14 +146,21 @@
     ]
   }
   </script>
+
+  <!-- Analytics -->
+  <script async defer
+    data-website-id="366d4537-053c-4a3b-89a4-de2ef907ab2b"
+    src="https://umami.bobot.click/script.js"></script>
+  <script defer src="/analytics.js"></script>
 </head>
-<body>
+<body data-page="how_to">
 
   <!-- Header -->
   <header class="header">
     <div class="header-inner container-lg">
       <a href="/" class="header-logo">SellSync</a>
-      <a href="https://t.me/aleksandr_later" class="header-link" target="_blank" rel="noopener">
+      <a href="https://t.me/aleksandr_later" class="header-link" target="_blank" rel="noopener"
+         data-event="external_telegram" data-event-location="header" data-event-page="how_to">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.2 5.1L2.5 12.5c-.6.2-.6 1.1 0 1.3l4.4 1.5 1.7 5.3c.2.5.8.7 1.2.4l2.5-2 4.8 3.5c.5.4 1.2.1 1.4-.5L21.9 6c.2-.7-.4-1.2-1-.9z"/><path d="M8.6 15.3l.6-4 8.8-8"/></svg>
         Telegram
       </a>
@@ -167,7 +174,8 @@
       <h1>Как подключить Wildberries<br>и Ozon к Google Sheets</h1>
       <p class="hero-subtitle">5 шагов: установка add-on, получение API-токенов, первая синхронизация. Занимает 5 минут, программирование не нужно.</p>
       <div>
-        <a href="#install" class="btn btn-primary btn-lg pulse-glow">
+        <a href="#install" class="btn btn-primary btn-lg pulse-glow"
+           data-event="cta_install" data-event-location="hero" data-event-page="how_to">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Установить SellSync
         </a>
@@ -271,32 +279,32 @@
     <div class="container-md">
       <h2>Частые вопросы</h2>
 
-      <details class="faq-item">
+      <details class="faq-item" data-event="faq_open" data-event-question="forpay_zero" data-event-page="how_to">
         <summary>Почему в листе «Продажи» «К выплате» показывает 0?</summary>
         <p>Wildberries считает поле <code>forPay</code> асинхронно — первые 24 часа после продажи там может быть 0. Точная сумма к выплате появится позже, либо смотрите её в листе «WB Финансы» (источник — отчёт <code>reportDetailByPeriod</code>).</p>
       </details>
 
-      <details class="faq-item">
+      <details class="faq-item" data-event="faq_open" data-event-question="commission_mismatch" data-event-page="how_to">
         <summary>Комиссия и логистика в «Продажах» иногда не сходятся с данными WB</summary>
         <p>В листе «Продажи» комиссия и логистика приблизительные — они агрегируются из финансовых отчётов и распределяются пропорционально выручке. Точные суммы — в листах <strong>«WB Финансы»</strong> и <strong>«Ozon Финансы»</strong>, там данные напрямую из финансовых API.</p>
       </details>
 
-      <details class="faq-item">
+      <details class="faq-item" data-event="faq_open" data-event-question="ozon_premium_missing" data-event-page="how_to">
         <summary>Я не вижу часть Ozon-аналитики</summary>
         <p>Часть продвинутых отчётов Ozon доступна только продавцам с подпиской Premium. Это ограничение платформы — SellSync не может его обойти. Базовые данные (заказы, продажи, остатки, финансы) работают на любом тарифе Ozon.</p>
       </details>
 
-      <details class="faq-item">
+      <details class="faq-item" data-event="faq_open" data-event-question="sync_incomplete" data-event-page="how_to">
         <summary>Синхронизация не дошла до конца — данные неполные</summary>
         <p>Apps Script ограничен 6 минутами на одно выполнение. Если ассортимент большой и SellSync не успел всё за один заход, нажмите «Обновить сейчас» ещё раз — SellSync дозагрузит остальное. Это нормально и не приводит к потере данных.</p>
       </details>
 
-      <details class="faq-item">
+      <details class="faq-item" data-event="faq_open" data-event-question="token_security" data-event-page="how_to">
         <summary>Безопасно ли вставлять API-токены в add-on?</summary>
         <p>Токены хранятся в <strong>UserProperties</strong> — это защищённое хранилище Google Apps Script, доступное только вам. SellSync не отправляет токены никуда, кроме самих API Wildberries и Ozon. Add-on запрашивает доступ только к текущей таблице (<code>currentonly</code>), а не ко всем вашим документам.</p>
       </details>
 
-      <details class="faq-item">
+      <details class="faq-item" data-event="faq_open" data-event-question="contact_support" data-event-page="how_to">
         <summary>Что-то не работает или не понятно — куда написать?</summary>
         <p>Напишите в <a href="https://t.me/aleksandr_later" target="_blank" rel="noopener">Telegram</a> — отвечаю быстро, помогу разобраться.</p>
       </details>
@@ -308,7 +316,8 @@
     <div class="container-sm" style="max-width: 512px;">
       <h2>Готовы попробовать?</h2>
       <p class="final-cta-subtitle">Установка из Google Workspace Marketplace, бесплатно, 1 минута.</p>
-      <a href="#install" class="btn btn-primary btn-lg pulse-glow">
+      <a href="#install" class="btn btn-primary btn-lg pulse-glow"
+         data-event="cta_install" data-event-location="final" data-event-page="how_to">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Установить SellSync
       </a>
@@ -328,7 +337,8 @@
         <a href="/how-to/">Инструкция</a>
         <a href="/privacy/">Конфиденциальность</a>
         <a href="/terms/">Условия</a>
-        <a href="https://t.me/aleksandr_later" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://t.me/aleksandr_later" target="_blank" rel="noopener"
+           data-event="external_telegram" data-event-location="footer" data-event-page="how_to">Telegram</a>
         <a href="mailto:alex.shakmakoff@gmail.com">alex.shakmakoff@gmail.com</a>
       </div>
       <p>&copy; 2026 SellSync</p>

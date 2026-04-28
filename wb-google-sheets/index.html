@@ -109,7 +109,7 @@
 
   <!-- Analytics -->
   <script async defer
-    data-website-id="__UMAMI_WEBSITE_ID__"
+    data-website-id="366d4537-053c-4a3b-89a4-de2ef907ab2b"
     src="https://umami.bobot.click/script.js"></script>
   <script defer src="/analytics.js"></script>
 </head>
@@ -401,7 +401,7 @@
         <p>Wildberries рассчитывает поле <code>forPay</code> асинхронно — в первые 24 часа после продажи там может быть 0. Точная сумма к выплате появится позже автоматически. Параллельно её можно посмотреть в листе <strong>«WB Финансы»</strong>, где данные приходят напрямую из отчёта <code>reportDetailByPeriod</code>.</p>
       </details>
 
-      <details class="faq-item">
+      <details class="faq-item" data-event="faq_open" data-event-question="multiple_wb_accounts" data-event-page="wb">
         <summary>Можно ли подключить несколько кабинетов Wildberries?</summary>
         <p>В одной Google-таблице — один токен WB. Если у вас несколько кабинетов, создайте отдельные таблицы Google и установите SellSync в каждой со своим токеном.</p>
       </details>
@@ -434,7 +434,8 @@
         <a href="/how-to/">Инструкция</a>
         <a href="/privacy/">Конфиденциальность</a>
         <a href="/terms/">Условия</a>
-        <a href="https://t.me/aleksandr_later" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://t.me/aleksandr_later" target="_blank" rel="noopener"
+           data-event="external_telegram" data-event-location="footer" data-event-page="wb">Telegram</a>
         <a href="mailto:alex.shakmakoff@gmail.com">alex.shakmakoff@gmail.com</a>
       </div>
       <p>&copy; 2026 SellSync</p>

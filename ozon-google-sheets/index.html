@@ -106,14 +106,21 @@
     ]
   }
   </script>
+
+  <!-- Analytics -->
+  <script async defer
+    data-website-id="366d4537-053c-4a3b-89a4-de2ef907ab2b"
+    src="https://umami.bobot.click/script.js"></script>
+  <script defer src="/analytics.js"></script>
 </head>
-<body>
+<body data-page="ozon">
 
   <!-- Header -->
   <header class="header">
     <div class="header-inner container-lg">
       <a href="/" class="header-logo">SellSync</a>
-      <a href="https://t.me/aleksandr_later" class="header-link" target="_blank" rel="noopener">
+      <a href="https://t.me/aleksandr_later" class="header-link" target="_blank" rel="noopener"
+         data-event="external_telegram" data-event-location="header" data-event-page="ozon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.2 5.1L2.5 12.5c-.6.2-.6 1.1 0 1.3l4.4 1.5 1.7 5.3c.2.5.8.7 1.2.4l2.5-2 4.8 3.5c.5.4 1.2.1 1.4-.5L21.9 6c.2-.7-.4-1.2-1-.9z"/><path d="M8.6 15.3l.6-4 8.8-8"/></svg>
         Telegram
       </a>
@@ -127,7 +134,8 @@
       <h1>Ozon в Google Sheets —<br>все данные в одной таблице</h1>
       <p class="hero-subtitle">Заказы, продажи, остатки и финансы Ozon — выгружаются прямо в вашу Google-таблицу. Бесплатно, без программирования, через Google Workspace Add-on.</p>
       <div>
-        <a href="/how-to/" class="btn btn-primary btn-lg pulse-glow">
+        <a href="/how-to/" class="btn btn-primary btn-lg pulse-glow"
+           data-event="cta_install" data-event-location="hero" data-event-page="ozon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Установить бесплатно
         </a>
@@ -367,27 +375,27 @@
     <div class="container-md">
       <h2>Частые вопросы про Ozon</h2>
 
-      <details class="faq-item">
+      <details class="faq-item" data-event="faq_open" data-event-question="ozon_keys_where" data-event-page="ozon">
         <summary>Где взять Client ID и API Key Ozon?</summary>
         <p>В кабинете продавца на <a href="https://seller.ozon.ru/" target="_blank" rel="noopener">seller.ozon.ru</a>: <strong>Настройки → Seller API → Сгенерировать ключ</strong>. Скопируйте API Key (UUID вида <code>xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</code>) — после закрытия окна его больше не показывают. <strong>Client ID</strong> — короткий числовой идентификатор кабинета, отображается на той же странице.</p>
       </details>
 
-      <details class="faq-item">
+      <details class="faq-item" data-event="faq_open" data-event-question="ozon_api_role" data-event-page="ozon">
         <summary>Какую роль выбрать для API-ключа Ozon?</summary>
         <p>Достаточно роли <strong>Admin Read Only</strong>. SellSync только читает данные из кабинета — заказы, продажи, остатки, финансы. В кабинет Ozon ничего не записывается, поэтому права на запись не нужны.</p>
       </details>
 
-      <details class="faq-item">
+      <details class="faq-item" data-event="faq_open" data-event-question="ozon_fbo_fbs" data-event-page="ozon">
         <summary>Поддерживается ли FBO и FBS Ozon?</summary>
         <p>Да, оба формата отгрузок. Заказы выгружаются и для <strong>FBS</strong> (отгрузка со склада продавца), и для <strong>FBO</strong> (склады Ozon). В листе «Ozon Заказы» отгрузки видны вместе с признаком склада, по которому можно фильтровать.</p>
       </details>
 
-      <details class="faq-item">
+      <details class="faq-item" data-event="faq_open" data-event-question="ozon_premium" data-event-page="ozon">
         <summary>Что с премиум-аналитикой Ozon?</summary>
         <p>Часть продвинутых отчётов Ozon (рейтинг продавца, конверсия в выкуп, brand-аналитика) доступна только продавцам с подпиской Premium. Это ограничение платформы — SellSync не может его обойти. Базовые данные — заказы, продажи, остатки, финансы — работают на любом тарифе Ozon.</p>
       </details>
 
-      <details class="faq-item">
+      <details class="faq-item" data-event="faq_open" data-event-question="multiple_ozon_accounts" data-event-page="ozon">
         <summary>Можно ли подключить несколько кабинетов Ozon?</summary>
         <p>В одной Google-таблице — одна пара Client ID + API Key Ozon. Если у вас несколько кабинетов, создайте отдельные Google-таблицы и установите SellSync в каждой со своими credentials.</p>
       </details>
@@ -400,7 +408,8 @@
     <div class="container-sm" style="max-width: 512px;">
       <h2>Установите за 1 минуту</h2>
       <p class="final-cta-subtitle">Бесплатный Google Workspace Add-on. Wildberries и Ozon в одной таблице.</p>
-      <a href="/how-to/" class="btn btn-primary btn-lg pulse-glow">
+      <a href="/how-to/" class="btn btn-primary btn-lg pulse-glow"
+         data-event="cta_install" data-event-location="final" data-event-page="ozon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Установить бесплатно
       </a>
@@ -419,7 +428,8 @@
         <a href="/how-to/">Инструкция</a>
         <a href="/privacy/">Конфиденциальность</a>
         <a href="/terms/">Условия</a>
-        <a href="https://t.me/aleksandr_later" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://t.me/aleksandr_later" target="_blank" rel="noopener"
+           data-event="external_telegram" data-event-location="footer" data-event-page="ozon">Telegram</a>
         <a href="mailto:alex.shakmakoff@gmail.com">alex.shakmakoff@gmail.com</a>
       </div>
       <p>&copy; 2026 SellSync</p>

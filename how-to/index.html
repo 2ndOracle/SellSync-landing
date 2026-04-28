@@ -11,6 +11,10 @@
 
   <meta name="robots" content="index, follow">
 
+  <!-- Search engine verification -->
+  <meta name="yandex-verification" content="TBD">
+  <meta name="google-site-verification" content="TBD">
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
@@ -24,9 +28,14 @@
   <meta property="og:type" content="article">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:site_name" content="SellSync">
+  <meta property="og:image" content="https://sellsync.bobot.click/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="SellSync — Wildberries и Ozon в Google Sheets">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Как подключить Wildberries и Ozon к Google Sheets">
   <meta name="twitter:description" content="Пошаговая инструкция: установка SellSync, получение API-токена Wildberries, Client ID и API Key Ozon, первый запуск синхронизации.">
+  <meta name="twitter:image" content="https://sellsync.bobot.click/og-image.png">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -79,6 +88,64 @@
     ]
   }
   </script>
+
+  <!-- JSON-LD FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Почему в листе «Продажи» «К выплате» показывает 0?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Wildberries считает поле forPay асинхронно — первые 24 часа после продажи там может быть 0. Точная сумма к выплате появится позже, либо смотрите её в листе «WB Финансы» (источник — отчёт reportDetailByPeriod)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Комиссия и логистика в «Продажах» иногда не сходятся с данными WB",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "В листе «Продажи» комиссия и логистика приблизительные — они агрегируются из финансовых отчётов и распределяются пропорционально выручке. Точные суммы — в листах «WB Финансы» и «Ozon Финансы», там данные напрямую из финансовых API."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Я не вижу часть Ozon-аналитики",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Часть продвинутых отчётов Ozon доступна только продавцам с подпиской Premium. Это ограничение платформы — SellSync не может его обойти. Базовые данные (заказы, продажи, остатки, финансы) работают на любом тарифе Ozon."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Синхронизация не дошла до конца — данные неполные",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Apps Script ограничен 6 минутами на одно выполнение. Если ассортимент большой и SellSync не успел всё за один заход, нажмите «Обновить сейчас» ещё раз — SellSync дозагрузит остальное. Это нормально и не приводит к потере данных."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Безопасно ли вставлять API-токены в add-on?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Токены хранятся в UserProperties — это защищённое хранилище Google Apps Script, доступное только вам. SellSync не отправляет токены никуда, кроме самих API Wildberries и Ozon. Add-on запрашивает доступ только к текущей таблице (currentonly), а не ко всем вашим документам."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Что-то не работает или не понятно — куда написать?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Напишите в Telegram (https://t.me/aleksandr_later) — отвечаю быстро, помогу разобраться."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -100,7 +167,7 @@
       <h1>Как подключить Wildberries<br>и Ozon к Google Sheets</h1>
       <p class="hero-subtitle">5 шагов: установка add-on, получение API-токенов, первая синхронизация. Занимает 5 минут, программирование не нужно.</p>
       <div>
-        <a href="#" class="btn btn-primary btn-lg pulse-glow">
+        <a href="#install" class="btn btn-primary btn-lg pulse-glow">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Установить SellSync
         </a>
@@ -241,7 +308,7 @@
     <div class="container-sm" style="max-width: 512px;">
       <h2>Готовы попробовать?</h2>
       <p class="final-cta-subtitle">Установка из Google Workspace Marketplace, бесплатно, 1 минута.</p>
-      <a href="#" class="btn btn-primary btn-lg pulse-glow">
+      <a href="#install" class="btn btn-primary btn-lg pulse-glow">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Установить SellSync
       </a>

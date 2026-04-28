@@ -11,6 +11,10 @@
 
   <meta name="robots" content="index, follow">
 
+  <!-- Search engine verification -->
+  <meta name="yandex-verification" content="TBD">
+  <meta name="google-site-verification" content="TBD">
+
   <!-- Open Graph -->
   <meta property="og:title" content="Ozon в Google Sheets — бесплатный Add-on">
   <meta property="og:description" content="Заказы, продажи, остатки, финансы и юнит-экономика Ozon — автоматически в Google Sheets. Бесплатный Google Workspace Add-on.">
@@ -18,9 +22,14 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:site_name" content="SellSync">
+  <meta property="og:image" content="https://sellsync.bobot.click/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="SellSync — Wildberries и Ozon в Google Sheets">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Ozon в Google Sheets — бесплатный Add-on">
   <meta name="twitter:description" content="Заказы, продажи, остатки, финансы и юнит-экономика Ozon — автоматически в Google Sheets.">
+  <meta name="twitter:image" content="https://sellsync.bobot.click/og-image.png">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,6 +56,56 @@
     }
   }
   </script>
+
+  <!-- JSON-LD FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Где взять Client ID и API Key Ozon?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "В кабинете продавца на seller.ozon.ru: Настройки → Seller API → Сгенерировать ключ. Скопируйте API Key (UUID вида xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx) — после закрытия окна его больше не показывают. Client ID — короткий числовой идентификатор кабинета, отображается на той же странице."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Какую роль выбрать для API-ключа Ozon?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Достаточно роли Admin Read Only. SellSync только читает данные из кабинета — заказы, продажи, остатки, финансы. В кабинет Ozon ничего не записывается, поэтому права на запись не нужны."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Поддерживается ли FBO и FBS Ozon?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Да, оба формата отгрузок. Заказы выгружаются и для FBS (отгрузка со склада продавца), и для FBO (склады Ozon). В листе «Ozon Заказы» отгрузки видны вместе с признаком склада, по которому можно фильтровать."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Что с премиум-аналитикой Ozon?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Часть продвинутых отчётов Ozon (рейтинг продавца, конверсия в выкуп, brand-аналитика) доступна только продавцам с подпиской Premium. Это ограничение платформы — SellSync не может его обойти. Базовые данные — заказы, продажи, остатки, финансы — работают на любом тарифе Ozon."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Можно ли подключить несколько кабинетов Ozon?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "В одной Google-таблице — одна пара Client ID + API Key Ozon. Если у вас несколько кабинетов, создайте отдельные Google-таблицы и установите SellSync в каждой со своими credentials."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -68,7 +127,7 @@
       <h1>Ozon в Google Sheets —<br>все данные в одной таблице</h1>
       <p class="hero-subtitle">Заказы, продажи, остатки и финансы Ozon — выгружаются прямо в вашу Google-таблицу. Бесплатно, без программирования, через Google Workspace Add-on.</p>
       <div>
-        <a href="#" class="btn btn-primary btn-lg pulse-glow">
+        <a href="/how-to/" class="btn btn-primary btn-lg pulse-glow">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Установить бесплатно
         </a>
@@ -117,6 +176,32 @@
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- Скриншоты -->
+  <section class="screenshots">
+    <div class="container-md">
+      <h2>Как выглядит Ozon в Google Sheets</h2>
+      <p class="screenshots-subtitle">Лист Ozon Продажи и аналитика на формулах в одной таблице — без MPStats и сторонних SaaS.</p>
+      <div class="screenshots-grid">
+
+        <figure class="screenshot screenshot-wide">
+          <img src="/screenshots/05-ozon-prodazhi.png" alt="Лист Ozon Продажи в Google Sheets — выгрузка через Ozon Seller API" width="1280" height="800" loading="lazy">
+          <figcaption>Лист «Ozon Продажи» — данные из Ozon Seller API в одной таблице с WB</figcaption>
+        </figure>
+
+        <figure class="screenshot">
+          <img src="/screenshots/04-abc-analiz.png" alt="ABC-анализ товаров Ozon — доля выручки, кумулятивный процент, категории A/B/C" width="1280" height="800" loading="lazy">
+          <figcaption>ABC-анализ Ozon — категории A/B/C по доле в выручке, обновляются на каждом sync</figcaption>
+        </figure>
+
+        <figure class="screenshot">
+          <img src="/screenshots/02-unit-ekonomika.png" alt="Юнит-экономика Ozon по SKU — маржа, ROI и валовая прибыль на формулах" width="1280" height="800" loading="lazy">
+          <figcaption>Юнит-экономика Ozon — маржа, ROI и валовая прибыль по каждому артикулу</figcaption>
+        </figure>
+
+      </div>
     </div>
   </section>
 
@@ -205,6 +290,21 @@
     </div>
   </section>
 
+  <!-- Особенности Ozon -->
+  <section class="howto-step howto-step-alt">
+    <div class="container-md">
+      <h2>Ozon в Google Workspace Marketplace — почему это редкость</h2>
+      <p class="howto-intro">Для Wildberries в Google Workspace Marketplace есть аддон WB-Sheets (заброшен с 2022 года). Для Ozon до SellSync не было ни одного нативного решения — продавцы Ozon выгружали данные через MPStats, Albato или собственные скрипты. Несколько технических деталей, которые отличают SellSync на Ozon:</p>
+      <ol class="howto-list">
+        <li><strong>FBO и FBS — оба формата отгрузок.</strong> Заказы тянутся через <code>/v3/posting/fbs/list</code> и аналогичный FBO endpoint, продажи и выручка — через analytics API. Лист «Ozon Заказы» содержит и собственный склад, и отгрузки с FBO.</li>
+        <li><strong>Комиссии и логистика приходят отдельно.</strong> В <code>/v1/analytics/data</code> финансовых полей нет — SellSync дополнительно опрашивает <code>/v1/finance/transaction/list</code> и обогащает листы «Ozon Продажи» и «Ozon Финансы» детальными данными по комиссии, эквайрингу, сервисным сборам и возвратам.</li>
+        <li><strong>Премиум-аналитика Ozon недоступна без подписки.</strong> Часть отчётов (рейтинг продавца, конверсии в выкуп, brand-аналитика) Ozon отдаёт только продавцам с Premium. Это ограничение платформы — SellSync обойти его не может, но базовые данные (заказы, продажи, остатки, финансы) работают на любом тарифе.</li>
+        <li><strong>Авторизация через два значения.</strong> Ozon Seller API требует <strong>Client ID</strong> (номер кабинета) и <strong>API Key</strong> (UUID-секрет). Достаточно роли <strong>«Admin Read Only»</strong> — SellSync только читает данные, ничего не пишет в кабинет.</li>
+        <li><strong>Остатки на разных складах.</strong> Лист «Ozon Остатки» собирает данные по всем складам Ozon отдельной строкой на склад — видно, где товар лежит и сколько в пути.</li>
+      </ol>
+    </div>
+  </section>
+
   <!-- Сравнение -->
   <section class="comparison">
     <div class="container-md">
@@ -262,12 +362,45 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container-md">
+      <h2>Частые вопросы про Ozon</h2>
+
+      <details class="faq-item">
+        <summary>Где взять Client ID и API Key Ozon?</summary>
+        <p>В кабинете продавца на <a href="https://seller.ozon.ru/" target="_blank" rel="noopener">seller.ozon.ru</a>: <strong>Настройки → Seller API → Сгенерировать ключ</strong>. Скопируйте API Key (UUID вида <code>xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</code>) — после закрытия окна его больше не показывают. <strong>Client ID</strong> — короткий числовой идентификатор кабинета, отображается на той же странице.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Какую роль выбрать для API-ключа Ozon?</summary>
+        <p>Достаточно роли <strong>Admin Read Only</strong>. SellSync только читает данные из кабинета — заказы, продажи, остатки, финансы. В кабинет Ozon ничего не записывается, поэтому права на запись не нужны.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Поддерживается ли FBO и FBS Ozon?</summary>
+        <p>Да, оба формата отгрузок. Заказы выгружаются и для <strong>FBS</strong> (отгрузка со склада продавца), и для <strong>FBO</strong> (склады Ozon). В листе «Ozon Заказы» отгрузки видны вместе с признаком склада, по которому можно фильтровать.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Что с премиум-аналитикой Ozon?</summary>
+        <p>Часть продвинутых отчётов Ozon (рейтинг продавца, конверсия в выкуп, brand-аналитика) доступна только продавцам с подпиской Premium. Это ограничение платформы — SellSync не может его обойти. Базовые данные — заказы, продажи, остатки, финансы — работают на любом тарифе Ozon.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Можно ли подключить несколько кабинетов Ozon?</summary>
+        <p>В одной Google-таблице — одна пара Client ID + API Key Ozon. Если у вас несколько кабинетов, создайте отдельные Google-таблицы и установите SellSync в каждой со своими credentials.</p>
+      </details>
+
+    </div>
+  </section>
+
   <!-- Final CTA -->
   <section class="final-cta">
     <div class="container-sm" style="max-width: 512px;">
       <h2>Установите за 1 минуту</h2>
       <p class="final-cta-subtitle">Бесплатный Google Workspace Add-on. Wildberries и Ozon в одной таблице.</p>
-      <a href="#" class="btn btn-primary btn-lg pulse-glow">
+      <a href="/how-to/" class="btn btn-primary btn-lg pulse-glow">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Установить бесплатно
       </a>

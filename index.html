@@ -9,6 +9,10 @@
   <meta name="keywords" content="wildberries google sheets, ozon google sheets, выгрузка wildberries, wb аналитика, ozon аналитика, маркетплейс google sheets, юнит-экономика wildberries, юнит-экономика ozon">
   <link rel="canonical" href="https://sellsync.bobot.click/">
 
+  <!-- Search engine verification -->
+  <meta name="yandex-verification" content="TBD">
+  <meta name="google-site-verification" content="TBD">
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
@@ -56,14 +60,79 @@
     }
   }
   </script>
+
+  <!-- JSON-LD FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Бесплатно ли это?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Да, базовые функции SellSync бесплатны: оба маркетплейса (WB и Ozon), все типы данных (заказы, продажи, остатки, финансы), юнит-экономика, ABC-анализ и прогноз поставок. Подписка появится позже и закроет авто-обновление и расширенную историю."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Где взять API-токен Wildberries?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "В личном кабинете продавца WB: Профиль → Настройки → Доступ к API → Создать новый токен. Отметьте категории Контент, Маркетплейс, Статистика, Финансы, Аналитика. Токен начинается с eyJ — скопируйте его сразу, после закрытия окна WB больше не покажет."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Где взять Client ID и API Key Ozon?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "В кабинете Ozon Seller: Настройки → Seller API → Сгенерировать ключ. Выберите роль Admin Read Only — этого достаточно. Скопируйте API Key (UUID) и Client ID — оба значения нужно вставить в sidebar SellSync."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Как часто данные обновляются?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "В Free-плане — вручную: нажимаете «Обновить сейчас» в sidebar, и SellSync синхронизирует все листы за 1–3 минуты. Авто-обновление по расписанию (раз в час, 6 или 12 часов) появится в платном плане."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Безопасно ли передавать API-токены через add-on?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Токены хранятся в UserProperties — это защищённое хранилище Google Apps Script, доступное только вам. SellSync не отправляет токены никуда, кроме API Wildberries и Ozon. Add-on запрашивает доступ только к текущей таблице (currentonly), а не ко всем вашим документам Google."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Чем SellSync отличается от WB-Sheets и Excellen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "WB-Sheets от AliRadar поддерживает только Wildberries и не обновлялся с февраля 2022. Excellen — это платный шаблон Google Sheets за 4 990 ₽, не нативный аддон, без авто-синхронизации. SellSync — единственный бесплатный нативный аддон в Google Workspace Marketplace, который покрывает и WB, и Ozon в одной таблице с юнит-экономикой и ABC-анализом."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Analytics -->
+  <script async defer
+    data-website-id="__UMAMI_WEBSITE_ID__"
+    src="https://umami.bobot.click/script.js"></script>
+  <script defer src="/analytics.js"></script>
 </head>
-<body>
+<body data-page="main">
 
   <!-- Header -->
   <header class="header">
     <div class="header-inner container-lg">
       <span class="header-logo">SellSync</span>
-      <a href="https://t.me/aleksandr_later" class="header-link" target="_blank" rel="noopener">
+      <a href="https://t.me/aleksandr_later" class="header-link" target="_blank" rel="noopener"
+         data-event="external_telegram" data-event-location="header" data-event-page="main">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.2 5.1L2.5 12.5c-.6.2-.6 1.1 0 1.3l4.4 1.5 1.7 5.3c.2.5.8.7 1.2.4l2.5-2 4.8 3.5c.5.4 1.2.1 1.4-.5L21.9 6c.2-.7-.4-1.2-1-.9z"/><path d="M8.6 15.3l.6-4 8.8-8"/></svg>
         Telegram
       </a>
@@ -77,7 +146,8 @@
       <h1>WB и Ozon в одной таблице.<br>Бесплатно.</h1>
       <p class="hero-subtitle">Заказы, продажи, остатки, финансы и юнит-экономика — автоматически в Google Sheets</p>
       <div>
-        <a href="#" class="btn btn-primary btn-lg pulse-glow">
+        <a href="/how-to/" class="btn btn-primary btn-lg pulse-glow"
+           data-event="cta_install" data-event-location="hero" data-event-page="main">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Установить бесплатно
         </a>
@@ -368,12 +438,51 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container-md">
+      <h2>Частые вопросы</h2>
+
+      <details class="faq-item" data-event="faq_open" data-event-question="is_free" data-event-page="main">
+        <summary>Бесплатно ли это?</summary>
+        <p>Да, базовые функции SellSync бесплатны: оба маркетплейса (WB и Ozon), все типы данных (заказы, продажи, остатки, финансы), юнит-экономика, ABC-анализ и прогноз поставок. Подписка появится позже и закроет авто-обновление и расширенную историю.</p>
+      </details>
+
+      <details class="faq-item" data-event="faq_open" data-event-question="wb_token" data-event-page="main">
+        <summary>Где взять API-токен Wildberries?</summary>
+        <p>В личном кабинете продавца WB: <strong>Профиль → Настройки → Доступ к API → Создать новый токен</strong>. Отметьте категории <strong>Контент, Маркетплейс, Статистика, Финансы, Аналитика</strong>. Токен начинается с <code>eyJ</code> — скопируйте его сразу, после закрытия окна WB больше не покажет.</p>
+      </details>
+
+      <details class="faq-item" data-event="faq_open" data-event-question="ozon_keys" data-event-page="main">
+        <summary>Где взять Client ID и API Key Ozon?</summary>
+        <p>В кабинете Ozon Seller: <strong>Настройки → Seller API → Сгенерировать ключ</strong>. Выберите роль <strong>Admin Read Only</strong> — этого достаточно. Скопируйте API Key (UUID) и Client ID — оба значения нужно вставить в sidebar SellSync.</p>
+      </details>
+
+      <details class="faq-item" data-event="faq_open" data-event-question="update_frequency" data-event-page="main">
+        <summary>Как часто данные обновляются?</summary>
+        <p>В Free-плане — вручную: нажимаете «Обновить сейчас» в sidebar, и SellSync синхронизирует все листы за 1–3 минуты. Авто-обновление по расписанию (раз в час, 6 или 12 часов) появится в платном плане.</p>
+      </details>
+
+      <details class="faq-item" data-event="faq_open" data-event-question="token_security" data-event-page="main">
+        <summary>Безопасно ли передавать API-токены через add-on?</summary>
+        <p>Токены хранятся в <strong>UserProperties</strong> — это защищённое хранилище Google Apps Script, доступное только вам. SellSync не отправляет токены никуда, кроме API Wildberries и Ozon. Add-on запрашивает доступ только к текущей таблице (<code>currentonly</code>), а не ко всем вашим документам Google.</p>
+      </details>
+
+      <details class="faq-item" data-event="faq_open" data-event-question="vs_competitors" data-event-page="main">
+        <summary>Чем SellSync отличается от WB-Sheets и Excellen?</summary>
+        <p><strong>WB-Sheets от AliRadar</strong> поддерживает только Wildberries и не обновлялся с февраля 2022. <strong>Excellen</strong> — это платный шаблон Google Sheets за 4 990 ₽, не нативный аддон, без авто-синхронизации. <strong>SellSync</strong> — единственный бесплатный нативный аддон в Google Workspace Marketplace, который покрывает и WB, и Ozon в одной таблице с юнит-экономикой и ABC-анализом.</p>
+      </details>
+
+    </div>
+  </section>
+
   <!-- Final CTA -->
   <section class="final-cta">
     <div class="container-sm" style="max-width: 512px;">
       <h2>Попробуйте бесплатно</h2>
       <p class="final-cta-subtitle">Установка за 1 минуту. Работает с WB и Ozon.</p>
-      <a href="#" class="btn btn-primary btn-lg pulse-glow">
+      <a href="/how-to/" class="btn btn-primary btn-lg pulse-glow"
+         data-event="cta_install" data-event-location="final" data-event-page="main">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Установить бесплатно
       </a>
@@ -393,7 +502,8 @@
         <a href="/how-to/">Инструкция</a>
         <a href="/privacy/">Конфиденциальность</a>
         <a href="/terms/">Условия</a>
-        <a href="https://t.me/aleksandr_later" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://t.me/aleksandr_later" target="_blank" rel="noopener"
+           data-event="external_telegram" data-event-location="footer" data-event-page="main">Telegram</a>
         <a href="mailto:alex.shakmakoff@gmail.com">alex.shakmakoff@gmail.com</a>
       </div>
       <p>&copy; 2026 SellSync</p>

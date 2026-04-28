@@ -6,10 +6,14 @@
 
   <title>Wildberries в Google Sheets — выгрузка заказов, продаж, остатков. Бесплатно — SellSync</title>
   <meta name="description" content="Бесплатный Google Workspace Add-on для выгрузки данных Wildberries в Google Sheets: заказы, продажи, остатки, финансы и юнит-экономика. Установка за 1 минуту.">
-  <meta name="keywords" content="wildberries google sheets, выгрузка wildberries в google sheets, wb google sheets, wb api google sheets, аналитика wildberries в таблице, юнит-экономика wildberries, wildberries в гугл таблицу">
+  <meta name="keywords" content="wildberries google sheets, выгрузка wildberries в google sheets, wb google sheets, wb api google sheets, аналитика wildberries в таблице, юнит-экономика wildberries, wildberries в гугл таблицу, wb-sheets аналог, замена wb-sheets, wb-sheets от aliradar">
   <link rel="canonical" href="https://sellsync.bobot.click/wb-google-sheets/">
 
   <meta name="robots" content="index, follow">
+
+  <!-- Search engine verification -->
+  <meta name="yandex-verification" content="TBD">
+  <meta name="google-site-verification" content="TBD">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Wildberries в Google Sheets — бесплатный Add-on">
@@ -18,9 +22,14 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:site_name" content="SellSync">
+  <meta property="og:image" content="https://sellsync.bobot.click/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="SellSync — Wildberries и Ozon в Google Sheets">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Wildberries в Google Sheets — бесплатный Add-on">
   <meta name="twitter:description" content="Заказы, продажи, остатки, финансы и юнит-экономика Wildberries — автоматически в Google Sheets.">
+  <meta name="twitter:image" content="https://sellsync.bobot.click/og-image.png">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,14 +56,71 @@
     }
   }
   </script>
+
+  <!-- JSON-LD FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Где создать API-токен Wildberries?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "В личном кабинете продавца на seller.wildberries.ru: нажмите на профиль → Настройки → Доступ к API → Создать новый токен. Назовите токен SellSync, выберите нужные категории доступа и сохраните длинную строку, начинающуюся с eyJ — после закрытия окна WB её больше не покажет."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Какие категории доступа выбрать в WB при создании токена?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Для полной выгрузки нужны пять категорий: Контент, Маркетплейс, Статистика, Финансы, Аналитика. Без любой из них часть листов будет пустой. Опцию «Только для чтения» можно оставить включённой — SellSync не пишет в кабинет WB."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Чем SellSync отличается от WB-Sheets от AliRadar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "WB-Sheets — единственный другой нативный аддон для Wildberries в Google Workspace Marketplace, но он поддерживает только WB (без Ozon), не обновлялся с февраля 2022 года и запрашивает полный доступ ко всем Google-таблицам пользователя. SellSync покрывает WB и Ozon одновременно, активно поддерживается, использует минимальные права (currentonly — только текущая таблица) и добавляет юнит-экономику, ABC-анализ и прогноз поставок поверх данных."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Почему «К выплате» в листе «WB Продажи» равно 0?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Wildberries рассчитывает поле forPay асинхронно — в первые 24 часа после продажи там может быть 0. Точная сумма к выплате появится позже автоматически. Параллельно её можно посмотреть в листе «WB Финансы», где данные приходят напрямую из отчёта reportDetailByPeriod."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Можно ли подключить несколько кабинетов Wildberries?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "В одной Google-таблице — один токен WB. Если у вас несколько кабинетов, создайте отдельные таблицы Google и установите SellSync в каждой со своим токеном."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Analytics -->
+  <script async defer
+    data-website-id="__UMAMI_WEBSITE_ID__"
+    src="https://umami.bobot.click/script.js"></script>
+  <script defer src="/analytics.js"></script>
 </head>
-<body>
+<body data-page="wb">
 
   <!-- Header -->
   <header class="header">
     <div class="header-inner container-lg">
       <a href="/" class="header-logo">SellSync</a>
-      <a href="https://t.me/aleksandr_later" class="header-link" target="_blank" rel="noopener">
+      <a href="https://t.me/aleksandr_later" class="header-link" target="_blank" rel="noopener"
+         data-event="external_telegram" data-event-location="header" data-event-page="wb">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.2 5.1L2.5 12.5c-.6.2-.6 1.1 0 1.3l4.4 1.5 1.7 5.3c.2.5.8.7 1.2.4l2.5-2 4.8 3.5c.5.4 1.2.1 1.4-.5L21.9 6c.2-.7-.4-1.2-1-.9z"/><path d="M8.6 15.3l.6-4 8.8-8"/></svg>
         Telegram
       </a>
@@ -68,7 +134,8 @@
       <h1>Wildberries в Google Sheets —<br>все данные в одной таблице</h1>
       <p class="hero-subtitle">Заказы, продажи, остатки и финансы Wildberries — выгружаются прямо в вашу Google-таблицу. Бесплатно, без программирования, через Google Workspace Add-on.</p>
       <div>
-        <a href="#" class="btn btn-primary btn-lg pulse-glow">
+        <a href="/how-to/" class="btn btn-primary btn-lg pulse-glow"
+           data-event="cta_install" data-event-location="hero" data-event-page="wb">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Установить бесплатно
         </a>
@@ -117,6 +184,32 @@
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- Скриншоты -->
+  <section class="screenshots">
+    <div class="container-md">
+      <h2>Как выглядит Wildberries в Google Sheets</h2>
+      <p class="screenshots-subtitle">Sidebar SellSync открывается в Google Sheets рядом с листами WB. Данные тянутся из API одной кнопкой.</p>
+      <div class="screenshots-grid">
+
+        <figure class="screenshot screenshot-wide">
+          <img src="/screenshots/01-sidebar-wb-prodazhi.png" alt="Sidebar SellSync с листом WB Продажи в Google Sheets — выгрузка через API Wildberries" width="1280" height="800" loading="lazy">
+          <figcaption>Sidebar SellSync рядом с листом «WB Продажи» — данные из API Wildberries по кнопке</figcaption>
+        </figure>
+
+        <figure class="screenshot">
+          <img src="/screenshots/02-unit-ekonomika.png" alt="Юнит-экономика Wildberries по SKU — маржа, ROI и валовая прибыль на формулах" width="1280" height="800" loading="lazy">
+          <figcaption>Юнит-экономика Wildberries — маржа, ROI и валовая прибыль по каждому артикулу</figcaption>
+        </figure>
+
+        <figure class="screenshot">
+          <img src="/screenshots/03-raschet-postavki.png" alt="Расчёт поставки Wildberries — дни запаса и рекомендация к закупке по SKU" width="1280" height="800" loading="lazy">
+          <figcaption>Расчёт поставки WB — средние продажи, дни запаса, что докупить</figcaption>
+        </figure>
+
+      </div>
     </div>
   </section>
 
@@ -205,6 +298,21 @@
     </div>
   </section>
 
+  <!-- Особенности WB -->
+  <section class="howto-step howto-step-alt">
+    <div class="container-md">
+      <h2>Особенности API Wildberries — что важно знать</h2>
+      <p class="howto-intro">SellSync ходит к нескольким endpoint'ам WB Statistics API и склеивает данные в листы. Несколько нюансов, на которые продавцы натыкаются чаще всего:</p>
+      <ol class="howto-list">
+        <li><strong>Поле «К выплате» (<code>forPay</code>) считается асинхронно.</strong> Первые 24 часа после продажи WB возвращает <code>0</code>. Точные суммы приходят позже — и параллельно дублируются в листе «WB Финансы» из отчёта <code>reportDetailByPeriod</code>.</li>
+        <li><strong>Комиссия и логистика в <code>/api/v1/supplier/sales</code> отсутствуют.</strong> SellSync берёт их из детального финансового отчёта <code>reportDetailByPeriod</code> и распределяет пропорционально выручке. Если расхождение принципиально — смотрите лист «WB Финансы», там данные напрямую с финансового endpoint'а.</li>
+        <li><strong>Endpoint остатков <code>/api/v1/supplier/stocks</code> помечен на удаление</strong> в changelog WB. SellSync мониторит обновления и переключится на новый endpoint автоматически — пользователю ничего не надо менять.</li>
+        <li><strong>Штрафы и удержания.</strong> Все списания (упаковка, габариты, отмены) собираются в листе «WB Финансы» с типом операции — видно, за что и сколько ушло.</li>
+        <li><strong>Категории доступа в токене.</strong> Для полной выгрузки нужны <strong>Контент</strong>, <strong>Маркетплейс</strong>, <strong>Статистика</strong>, <strong>Финансы</strong>, <strong>Аналитика</strong>. Без любой из них часть листов будет пустой.</li>
+      </ol>
+    </div>
+  </section>
+
   <!-- Сравнение -->
   <section class="comparison">
     <div class="container-md">
@@ -268,12 +376,46 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container-md">
+      <h2>Частые вопросы про Wildberries</h2>
+
+      <details class="faq-item" data-event="faq_open" data-event-question="wb_token_where" data-event-page="wb">
+        <summary>Где создать API-токен Wildberries?</summary>
+        <p>В личном кабинете продавца на <a href="https://seller.wildberries.ru/" target="_blank" rel="noopener">seller.wildberries.ru</a>: нажмите на профиль → <strong>Настройки → Доступ к API → Создать новый токен</strong>. Назовите токен <code>SellSync</code>, выберите нужные категории доступа и сохраните длинную строку, начинающуюся с <code>eyJ</code> — после закрытия окна WB её больше не покажет.</p>
+      </details>
+
+      <details class="faq-item" data-event="faq_open" data-event-question="wb_token_scopes" data-event-page="wb">
+        <summary>Какие категории доступа выбрать в WB при создании токена?</summary>
+        <p>Для полной выгрузки нужны пять категорий: <strong>Контент, Маркетплейс, Статистика, Финансы, Аналитика</strong>. Без любой из них часть листов будет пустой. Опцию «Только для чтения» можно оставить включённой — SellSync не пишет в кабинет WB.</p>
+      </details>
+
+      <details class="faq-item" data-event="faq_open" data-event-question="vs_wb_sheets" data-event-page="wb">
+        <summary>Чем SellSync отличается от WB-Sheets от AliRadar?</summary>
+        <p><strong>WB-Sheets</strong> — единственный другой нативный аддон для Wildberries в Google Workspace Marketplace, но он поддерживает только WB (без Ozon), не обновлялся с февраля 2022 года и запрашивает полный доступ ко всем Google-таблицам пользователя. <strong>SellSync</strong> покрывает WB и Ozon одновременно, активно поддерживается, использует минимальные права (<code>currentonly</code> — только текущая таблица) и добавляет юнит-экономику, ABC-анализ и прогноз поставок поверх данных.</p>
+      </details>
+
+      <details class="faq-item" data-event="faq_open" data-event-question="wb_forpay_zero" data-event-page="wb">
+        <summary>Почему «К выплате» в листе «WB Продажи» равно 0?</summary>
+        <p>Wildberries рассчитывает поле <code>forPay</code> асинхронно — в первые 24 часа после продажи там может быть 0. Точная сумма к выплате появится позже автоматически. Параллельно её можно посмотреть в листе <strong>«WB Финансы»</strong>, где данные приходят напрямую из отчёта <code>reportDetailByPeriod</code>.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Можно ли подключить несколько кабинетов Wildberries?</summary>
+        <p>В одной Google-таблице — один токен WB. Если у вас несколько кабинетов, создайте отдельные таблицы Google и установите SellSync в каждой со своим токеном.</p>
+      </details>
+
+    </div>
+  </section>
+
   <!-- Final CTA -->
   <section class="final-cta">
     <div class="container-sm" style="max-width: 512px;">
       <h2>Установите за 1 минуту</h2>
       <p class="final-cta-subtitle">Бесплатный Google Workspace Add-on. Wildberries и Ozon в одной таблице.</p>
-      <a href="#" class="btn btn-primary btn-lg pulse-glow">
+      <a href="/how-to/" class="btn btn-primary btn-lg pulse-glow"
+         data-event="cta_install" data-event-location="final" data-event-page="wb">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Установить бесплатно
       </a>
